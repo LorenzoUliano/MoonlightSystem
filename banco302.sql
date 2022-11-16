@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Out-2022 às 04:28
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 8.0.12
+-- Tempo de geração: 16-Nov-2022 às 04:11
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,7 +56,76 @@ INSERT INTO `tb_auditoria` (`id_auditoria`, `nm_tabela`, `dt_evento`, `evento`, 
 (13, 'tb_itens_venda', '2022-05-31 09:49:24', 'INSERT', NULL, '11|19|34|1|1.00'),
 (14, 'tb_itens_venda', '2022-05-31 09:54:44', 'DELETE', '11|19|34|1|1.00', NULL),
 (15, 'tb_itens_venda', '2022-05-31 09:54:51', 'INSERT', NULL, '12|21|28|1|1.00'),
-(16, 'tb_itens_venda', '2022-05-31 10:35:43', 'UPDATE', '12|21|28|2|1.00', '12|21|28|3|1.00');
+(16, 'tb_itens_venda', '2022-05-31 10:35:43', 'UPDATE', '12|21|28|2|1.00', '12|21|28|3|1.00'),
+(17, 'tb_itens_venda', '2022-11-15 16:02:19', 'INSERT', NULL, '13|0|27|12|0.00'),
+(18, 'tb_itens_venda', '2022-11-15 16:04:21', 'INSERT', NULL, '14|0|15|1|0.00'),
+(19, 'tb_itens_venda', '2022-11-15 16:07:52', 'INSERT', NULL, '15|0|20|1|0.00'),
+(20, 'tb_itens_venda', '2022-11-15 16:10:20', 'DELETE', '13|0|27|12|0.00', NULL),
+(21, 'tb_itens_venda', '2022-11-15 16:10:21', 'DELETE', '14|0|15|1|0.00', NULL),
+(22, 'tb_itens_venda', '2022-11-15 16:11:22', 'INSERT', NULL, '16|0|32|1|0.00'),
+(23, 'tb_itens_venda', '2022-11-15 16:11:28', 'DELETE', '16|0|32|1|0.00', NULL),
+(24, 'tb_itens_venda', '2022-11-15 16:11:32', 'INSERT', NULL, '17|0|18|1|0.00'),
+(25, 'tb_itens_venda', '2022-11-15 16:15:04', 'INSERT', NULL, '18|0|28|12|0.00'),
+(26, 'tb_produto', '2022-11-15 16:27:30', 'INSERT', NULL, NULL),
+(27, 'tb_produto', '2022-11-15 16:27:52', 'DELETE', '4|Feijão|2.00|3.00|dqweqwewerwe|1|19.00', NULL),
+(28, 'tb_produto', '2022-11-15 16:27:57', 'DELETE', NULL, NULL),
+(29, 'tb_produto', '2022-11-15 16:28:02', 'DELETE', NULL, NULL),
+(30, 'tb_produto', '2022-11-15 16:28:04', 'DELETE', NULL, NULL),
+(31, 'tb_produto', '2022-11-15 16:28:06', 'DELETE', NULL, NULL),
+(32, 'tb_produto', '2022-11-15 16:28:08', 'DELETE', NULL, NULL),
+(33, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(34, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(35, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(36, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(37, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(38, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(39, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(40, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(41, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(42, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(43, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(44, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(45, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(46, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(47, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(48, 'tb_produto', '2022-11-15 16:28:36', 'DELETE', NULL, NULL),
+(49, 'tb_grupo', '2022-11-15 16:28:56', 'DELETE', '3|Vestuário|', NULL),
+(50, 'tb_grupo', '2022-11-15 16:28:56', 'DELETE', '4|Eletrdomésticos|', NULL),
+(51, 'tb_grupo', '2022-11-15 16:28:57', 'DELETE', '10|Eletromoveis |', NULL),
+(52, 'tb_grupo', '2022-11-15 16:28:58', 'DELETE', '11|Carros |', NULL),
+(53, 'tb_grupo', '2022-11-15 16:28:58', 'DELETE', '12|Carros |', NULL),
+(54, 'tb_grupo', '2022-11-15 16:28:59', 'DELETE', '13|Gabriel|', NULL),
+(55, 'tb_grupo', '2022-11-15 16:28:59', 'DELETE', '14|junor|', NULL),
+(56, 'tb_grupo', '2022-11-15 16:29:39', 'INSERT', NULL, '15|Alimenticio|'),
+(57, 'tb_grupo', '2022-11-15 16:29:41', 'DELETE', '15|Alimenticio|', NULL),
+(58, 'tb_grupo', '2022-11-15 16:29:46', 'INSERT', NULL, '16|Comida|'),
+(59, 'tb_grupo', '2022-11-15 16:29:57', 'DELETE', '16|Comida|', NULL),
+(60, 'tb_grupo', '2022-11-15 16:30:00', 'INSERT', NULL, '17|Doce|'),
+(61, 'tb_grupo', '2022-11-15 16:30:03', 'INSERT', NULL, '18|Salgado|'),
+(62, 'tb_pedido', '2022-11-15 16:30:53', 'UPDATE', '19|2|1', '19|2|1'),
+(63, 'tb_produto', '2022-11-15 16:34:57', 'INSERT', NULL, NULL),
+(64, 'tb_itens_venda', '2022-11-15 16:35:17', 'INSERT', NULL, '19|0|40|5|0.00'),
+(65, 'tb_itens_venda', '2022-11-15 22:00:02', 'INSERT', NULL, '20|0|40|5|0.00'),
+(66, 'tb_itens_venda', '2022-11-15 22:00:13', 'INSERT', NULL, '21|0|40|30|0.00'),
+(67, 'tb_itens_venda', '2022-11-15 22:00:26', 'DELETE', '20|0|40|5|0.00', NULL),
+(68, 'tb_itens_venda', '2022-11-15 22:00:26', 'DELETE', '21|0|40|30|0.00', NULL),
+(69, 'tb_produto', '2022-11-15 22:01:15', 'INSERT', NULL, NULL),
+(70, 'tb_itens_venda', '2022-11-15 22:01:37', 'INSERT', NULL, '22|0|41|1|0.00'),
+(71, 'tb_vendedor', '2022-11-15 22:06:22', 'UPDATE', '1|Pedro', '1|Pedro'),
+(72, 'tb_vendedor', '2022-11-15 22:06:27', 'UPDATE', '1|Pedro', '1|Pedro Foda'),
+(73, 'tb_vendedor', '2022-11-15 22:06:35', 'INSERT', NULL, '2|Pedro 3|'),
+(74, 'tb_grupo', '2022-11-15 22:10:05', 'INSERT', NULL, '19|Agridoce|'),
+(75, 'tb_grupo', '2022-11-15 22:10:18', 'DELETE', '17|Doce|', NULL),
+(76, 'tb_vendedor', '2022-11-15 22:56:40', 'INSERT', NULL, '3||'),
+(77, 'tb_pedido', '2022-11-15 23:04:41', 'INSERT', NULL, '23|2|2|'),
+(78, 'tb_vendedor', '2022-11-15 23:05:51', 'INSERT', NULL, '4|Carlos|'),
+(79, 'tb_vendedor', '2022-11-15 23:05:53', 'DELETE', '3||', NULL),
+(80, 'tb_itens_venda', '2022-11-15 23:39:53', 'INSERT', NULL, '23|0|41|12|0.00'),
+(81, 'tb_itens_venda', '2022-11-15 23:39:58', 'INSERT', NULL, '24|0|40|1|0.00'),
+(82, 'tb_itens_venda', '2022-11-15 23:39:59', 'DELETE', '23|0|41|12|0.00', NULL),
+(83, 'tb_itens_venda', '2022-11-15 23:40:11', 'INSERT', NULL, '25|0|40|1|0.00'),
+(84, 'tb_itens_venda', '2022-11-15 23:40:16', 'DELETE', '24|0|40|1|0.00', NULL),
+(85, 'tb_itens_venda', '2022-11-15 23:40:16', 'DELETE', '25|0|40|1|0.00', NULL);
 
 -- --------------------------------------------------------
 
@@ -250,13 +319,8 @@ CREATE TABLE `tb_grupo` (
 --
 
 INSERT INTO `tb_grupo` (`id_grupo`, `nm_grupo`) VALUES
-(3, 'Vestuário'),
-(4, 'Eletrdomésticos'),
-(10, 'Eletromoveis '),
-(11, 'Carros '),
-(12, 'Carros '),
-(13, 'Gabriel'),
-(14, 'junor');
+(18, 'Salgado'),
+(19, 'Agridoce');
 
 --
 -- Acionadores `tb_grupo`
@@ -297,24 +361,30 @@ CREATE TABLE `tb_itens_venda` (
   `fk_id_pedido` int(11) NOT NULL,
   `fk_id_produto` int(11) NOT NULL,
   `qtd_venda` int(11) NOT NULL,
-  `preuni` float(9,2) NOT NULL
+  `preuni` float(9,2) NOT NULL,
+  `fk_id_venda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_itens_venda`
 --
 
-INSERT INTO `tb_itens_venda` (`id_itens_venda`, `fk_id_pedido`, `fk_id_produto`, `qtd_venda`, `preuni`) VALUES
-(2, 1, 4, 7, 60.00),
-(3, 2, 4, 18, 58.00),
-(4, 1, 1, 10, 1.00),
-(5, 1, 1, 12, 1.00),
-(6, 1, 1, 1, 1.00),
-(7, 1, 1, 1, 1.00),
-(8, 1, 1, 1, 1.00),
-(9, 1, 1, 1, 1.00),
-(10, 1, 1, 1, 1.00),
-(12, 21, 28, 3, 1.00);
+INSERT INTO `tb_itens_venda` (`id_itens_venda`, `fk_id_pedido`, `fk_id_produto`, `qtd_venda`, `preuni`, `fk_id_venda`) VALUES
+(2, 1, 4, 7, 60.00, 0),
+(3, 2, 4, 18, 58.00, 0),
+(4, 1, 1, 10, 1.00, 0),
+(5, 1, 1, 12, 1.00, 0),
+(6, 1, 1, 1, 1.00, 0),
+(7, 1, 1, 1, 1.00, 0),
+(8, 1, 1, 1, 1.00, 0),
+(9, 1, 1, 1, 1.00, 0),
+(10, 1, 1, 1, 1.00, 0),
+(12, 21, 28, 3, 1.00, 0),
+(15, 0, 20, 1, 0.00, 7),
+(17, 0, 18, 1, 0.00, 2),
+(18, 0, 28, 12, 0.00, 8),
+(19, 0, 40, 5, 0.00, 9),
+(22, 0, 41, 1, 0.00, 11);
 
 --
 -- Acionadores `tb_itens_venda`
@@ -361,7 +431,8 @@ CREATE TABLE `tb_pedido` (
 INSERT INTO `tb_pedido` (`id_pedido`, `fk_id_cliente`, `fk_id_vendedor`) VALUES
 (19, 2, 1),
 (21, 4, 1),
-(22, 3, 1);
+(22, 3, 1),
+(23, 2, 2);
 
 --
 -- Acionadores `tb_pedido`
@@ -408,27 +479,8 @@ CREATE TABLE `tb_produto` (
 --
 
 INSERT INTO `tb_produto` (`id_produto`, `nm_produto`, `precocompra`, `precovenda`, `obs`, `fk_id_grupo`, `qtd_estoque`) VALUES
-(4, 'Feijão', 2.00, 3.00, 'dqweqwewerwe', 1, 19.00),
-(6, 'Casarão', 2.00, 2.00, 'Ação, Confusão além', 1, NULL),
-(7, 'Carne de Primeira', 20.00, 70.00, 'sdasfsa', 1, NULL),
-(15, 'Carne', 40.00, 75.00, 'csdsadsadsadssad', 1, NULL),
-(16, 'Feijão', 23.00, 30.00, ' eteywety dhfsdfjsfd dhffdjhfdsj\r\ndfdjfdslfds', 1, NULL),
-(18, 'Carne de Primeira', 20.00, 30.00, 'dwsadssadadsdsasd dshgsasdj sfssfddfds', 1, NULL),
-(19, 'Carne de Primeira', 25.00, 4.60, 'safasfsdfsaggdas\r\ndgsdsggdssdggds', 1, NULL),
-(20, 'Feijão', 20.00, 30.00, 'asdsaddassad', 1, NULL),
-(21, 'Carne', 25.00, 20.00, 'safsaasfsa  ', 10, NULL),
-(22, 'Carne de Primeira', 20.00, 70.00, 'asDA', 2, NULL),
-(23, 'Carne de Primeira', 25.00, 80.00, 'ssasa', 5, NULL),
-(24, 'Carne de Segunda', 25.00, 70.00, 'dasadsass', 6, NULL),
-(27, 'Carne', 30.00, 40.00, '1 dadssda xcxcxc', 1, NULL),
-(28, 'Carne', 30.00, 40.00, '1 dadssda xcxcxc Eraldo', 1, NULL),
-(29, 'Carne de Segunda', 21.00, 23.00, 'asddasdsas', 1, NULL),
-(30, 'Feijão', 20.00, 30.00, 'aADdA', 1, NULL),
-(31, 'Carne de Segunda', 67.00, 98.00, 'hghghfhh', 1, NULL),
-(32, 'Carne', 30.00, 40.00, 'xccdcdsdssa eraldo  ', 1, NULL),
-(33, 'Feijão', 23.00, 23.00, 'adsadsa', 1, NULL),
-(34, 'Carne', 30.00, 40.00, 'xccdcdsdssa eraldo  ', 1, NULL),
-(38, 'ahhanbemmoscao', 1234.00, 2345.00, ' ', 10, NULL);
+(40, 'Pão', 0.50, 1.50, ' ', 18, NULL),
+(41, 'Cachorro', 50.00, 79.90, ' melhor que picanha', 18, NULL);
 
 --
 -- Acionadores `tb_produto`
@@ -461,6 +513,32 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tb_venda`
+--
+
+CREATE TABLE `tb_venda` (
+  `id_venda` int(11) NOT NULL,
+  `dt_venda` date NOT NULL,
+  `fk_id_cliente` int(11) NOT NULL,
+  `fk_id_vendedor` int(11) NOT NULL,
+  `vl_total` float(9,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_venda`
+--
+
+INSERT INTO `tb_venda` (`id_venda`, `dt_venda`, `fk_id_cliente`, `fk_id_vendedor`, `vl_total`) VALUES
+(1, '2022-11-11', 0, 0, NULL),
+(13, '2022-11-15', 3, 2, 0.00),
+(14, '2022-11-15', 2, 2, 0.00),
+(15, '2022-11-15', 3, 2, 0.00),
+(16, '2022-11-15', 3, 2, 0.00),
+(17, '2022-11-15', 3, 1, 0.00);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tb_vendedor`
 --
 
@@ -474,7 +552,9 @@ CREATE TABLE `tb_vendedor` (
 --
 
 INSERT INTO `tb_vendedor` (`id_vendedor`, `nm_vendedor`) VALUES
-(1, 'Pedro');
+(1, 'Pedro Foda'),
+(2, 'Pedro 3'),
+(4, 'Carlos');
 
 --
 -- Acionadores `tb_vendedor`
@@ -565,6 +645,12 @@ ALTER TABLE `tb_produto`
   ADD PRIMARY KEY (`id_produto`);
 
 --
+-- Índices para tabela `tb_venda`
+--
+ALTER TABLE `tb_venda`
+  ADD PRIMARY KEY (`id_venda`);
+
+--
 -- Índices para tabela `tb_vendedor`
 --
 ALTER TABLE `tb_vendedor`
@@ -578,7 +664,7 @@ ALTER TABLE `tb_vendedor`
 -- AUTO_INCREMENT de tabela `tb_auditoria`
 --
 ALTER TABLE `tb_auditoria`
-  MODIFY `id_auditoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_auditoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cidade`
@@ -608,31 +694,37 @@ ALTER TABLE `tb_funcionario`
 -- AUTO_INCREMENT de tabela `tb_grupo`
 --
 ALTER TABLE `tb_grupo`
-  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `tb_itens_venda`
 --
 ALTER TABLE `tb_itens_venda`
-  MODIFY `id_itens_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_itens_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `tb_pedido`
 --
 ALTER TABLE `tb_pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto`
 --
 ALTER TABLE `tb_produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT de tabela `tb_venda`
+--
+ALTER TABLE `tb_venda`
+  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `tb_vendedor`
 --
 ALTER TABLE `tb_vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
