@@ -8,9 +8,9 @@ if ($resultado==false) {
 }
 ?>
 <meta charset="utf-8">
-<h2> Lista de Fornecedors</h2>
+<h2> Lista de Fornecedores</h2>
 <a href="formFornecedor.php">Novo</a>
-<table border="1">
+<table class="table table-bordered bg-white container text-center">
 	<tr>
 		<th>ID </th>
 		<th>Fornecedor</th>
@@ -23,6 +23,7 @@ if ($resultado==false) {
          	echo "<tr>";
          	echo "<td> $item[id_fornecedor] </td>";
          	echo "<td> $item[nm_fornecedor] </td>";
+         	echo "<td> $item[cnpj_fornecedor] </td>";
          	echo "<td> $item[nm_cidade] </td>";
          	echo "<td><a href='formFornecedor.php?id=$item[id_fornecedor]'>Editar</a></td>";
          	echo "<td><a href='formExcluirFornecedor.php?id=$item[id_fornecedor]'>Excluir</a></td>";

@@ -6,38 +6,55 @@
 	<link rel="stylesheet" href="../assets/css/bootstrap.css">
     <script src="../assets/js/bootstrap.js" defer></script>
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		body{
-			background-color: #121214;
-			color: white;
+			background-color: #212529;
+			color: #fff;
+			font-family: 'Montserrat', sans-serif;
 		}
 		ul li{
 			padding: 0px 20px;
 		}
-		table{
-			
+		ul{
+			margin-top: 15px;
+		}
+		.nav{
+			background-color: #CED4DA;
+		}
+		.btn-outline-dark{
+			border: 2px solid #212529;
+		}
+		.logo{
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 2px;
+		}
+		.logo span{
+			color: #003566;
 		}
 	</style>
 </head>
 <body>
-	<div class="p-5 bg-warning d-flex justify-content-between">
-		<div class="logo">
-			<a href="./nav.php"><img class="logo" src="../img/logo.png" width="100"></a>
+	<div class="p-4 d-flex justify-content-between align-items-center nav">
+		<div>
+			<h1 class="logo"><a href="../venda/formListaVenda.php" class="text-decoration-none text-black"><span>MOONLIGHT</span> SYSTEM</a></h1>
 		</div>
-		<ul class="d-flex list-unstyled">
-			<li> <a href="../Produto/formListaProduto.php" class="btn btn-primary">Produto
+		<ul class="d-flex list-unstyled align-items-center">
+			<li> <a href="../Produto/formListaProduto.php" class="btn btn-outline-dark fw-bolder">Produto
 			</a></li>
-			<li> <a href="../Grupo/formListaGrupo.php" class="btn btn-primary">Grupo
+			<li> <a href="../Grupo/formListaGrupo.php" class="btn btn-outline-dark fw-bolder">Grupo
 			</a></li>
-			<li> <a href="../Cidade/formListaCidade.php" class="btn btn-primary">Cidade
+			<li> <a href="../Cidade/formListaCidade.php" class="btn btn-outline-dark fw-bolder">Cidade
 			</a></li>
-			<li> <a href="../Cliente/formListaCliente.php" class="btn btn-primary">Cliente
+			<li> <a href="../Cliente/formListaCliente.php" class="btn btn-outline-dark fw-bolder">Cliente
 			</a></li>
-			<li> <a href="../Pedido/formListaPedido.php" class="btn btn-primary">Pedido
-			</a></li>
-			<li> <a href="../Fornecedor/formListaFornecedor.php" class="btn btn-primary">Fornecedor
+			<li> <a href="../Fornecedor/formListaFornecedor.php" class="btn btn-outline-dark fw-bolder">Fornecedor
 			</a></li>
 			<li>
-				<a href="../Funcionarios/formListaFuncionario.php" class="btn btn-primary">Funcionários</a>
+				<a href="../Funcionarios/formListaFuncionario.php" class="btn btn-outline-dark fw-bolder">Vendedor</a>
+			</li>
+			<li>
+				<a href="../venda/formListaVenda.php" class="btn btn-primary btn-lg fw-bolder">Vendas</a>
 			</li>
 		</ul>
 	</div>

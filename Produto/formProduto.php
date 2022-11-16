@@ -1,9 +1,10 @@
 <?php
+  error_reporting(0);
    include '../formMenu.php';
    include '../conexao/conecta.php';
    if ($_GET['id']) {
     $id=$_GET['id'];
-     $sql="SELECT id_produto, nm_produto, precocompra,precovenda, fk_id_grupo,obs FROM tb_produto WHERE id_produto=$id";
+     $sql="SELECT id_produto, nm_produto, precocompra, precovenda, fk_id_grupo, obs FROM tb_produto WHERE id_produto=$id";
      $resultado=mysqli_query($conexao,$sql);
      if ($resultado==false) {
        die("Erro: ".mysqli_error($conexao));
@@ -14,7 +15,7 @@
      
    }
 
-   $sqlgrupo="SELECT id_grupo, nm_grupo FROM tb_grupo ORDER BY nm_grupo";
+   $sqlgrupo="SELECT id_grupo, nm_grupo FROM tb_grupo";
    $resultadoGrupo=mysqli_query($conexao,$sqlgrupo);
    $itemGrupo=mysqli_fetch_array($resultadoGrupo);
    ?>
@@ -33,20 +34,18 @@
   <label>Nome:</label> <br>
   <input type="TEXT" name="nome" value=<?php echo $item['nm_produto']?> > <br> <br>
   <label>Preço de Compra</label> <br>
-  <input type="TEXT" name="precocompra" value=<?php echo $item['precocompra']?> /> <br><br>
+  <input type="TEXT" name="precocompra" value=<?php echo $item['precocompra']?> > <br><br>
   <label>Preço de Venda</label> <br>
- <input type="TEXT" name="precovenda" value=<?php echo $item['precovenda']?> /> <br><br>
+ <input type="TEXT" name="precovenda" value=<?php echo $item['precovenda']?> > <br><br>
  <label>Grupo</label> <br>
 
  <select  name="grupo">
   <option>Selecione</option>
   <?php 
    while ($itemGrupo=mysqli_fetch_array($resultadoGrupo)) {
-    if ($itemGrupo['id_grupo']==$item['fk_id_grupo'])
-    {
+    if ($itemGrupo['id_grupo']==$item['fk_id_grupo']){
       echo "<option value='$itemGrupo[id_grupo]' selected='selected'>";
-    }else
-    {
+    }else {
       echo "<option value='$itemGrupo[id_grupo]' >";
     }
     echo $itemGrupo['nm_grupo'];

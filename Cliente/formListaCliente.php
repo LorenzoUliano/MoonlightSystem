@@ -10,7 +10,7 @@ if ($resultado==false) {
 <meta charset="utf-8">
 <h2> Lista de Clientes</h2>
 <a href="formCliente.php">Novo</a>
-<table border="1">
+<table class="table table-bordered bg-white container text-center">
 	<tr>
 		<th>ID </th>
 		<th>Cliente</th>

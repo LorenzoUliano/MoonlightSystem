@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <h2> Lista de Grupos</h2>
 <a href="formGrupo.php">Novo</a>
-<table border="1">
+<table class="table table-bordered bg-white container text-center">
 	<tr>
 		<th>ID </th>
 		<th>Grupo </th>

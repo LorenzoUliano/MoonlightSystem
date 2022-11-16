@@ -1,5 +1,6 @@
 <?php 
   include '../formMenu.php';
+  error_reporting(0);
    include '../conexao/conecta.php';
    if ($_GET['id']) {
     $id=$_GET['id'];
@@ -16,19 +17,19 @@
    ?>
    <meta charset="utf-8">
    <h2>Cadastro de Cidades</h2>
-   <a href="formListaCidade.php">Lista de Cidades</a> <br> <br>
+   <a href="formListaCidade.php">Lista de Cidades</a>
 <form method="post" action="GravaCidade.php">
 <?php
   if ($_GET['id'])  {
     ?>
-      <label>ID: </label> <br>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_cidade'] ?> > <br> <br>
+      <label>ID: </label>
+      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_cidade'] ?> > 
 <?php     
   }
   ?>
-  <label>Nome:</label> <br>
-  <input type="TEXT" name="nome" value=<?php echo $item['nm_cidade']?> > <br> <br>
-  <label>UF:</label> <br>
-  <input type="TEXT" name="uf" value=<?php echo $item['uf_cidade']?> > <br> <br>                                                      
+  <label>Nome:</label>
+  <input type="TEXT" name="nome" value=<?php echo $item['nm_cidade']?> >
+  <label>UF:</label>
+  <input type="TEXT" name="uf" value=<?php echo $item['uf_cidade']?> >                                              
   <input type="submit" name="Salvar" value="Salvar">
 </form>

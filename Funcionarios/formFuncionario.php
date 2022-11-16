@@ -4,7 +4,7 @@
     include '../conexao/conecta.php';
     if ($_GET['id']) {
     $id=$_GET['id'];
-     $sql="SELECT * FROM tb_funcionario WHERE id_funcionario=$id";
+     $sql="SELECT * FROM tb_vendedor WHERE id_vendedor=$id";
      $resultado=mysqli_query($conexao,$sql);
      if ($resultado==false) {
        die("Erro: ".mysqli_error($conexao));
@@ -16,30 +16,18 @@
    }
    ?>
    <meta charset="utf-8">
-   <h2>Cadastro de Cidades</h2>
-   <a href="formListaFuncionario.php">Lista de Cidades</a>
+   <h2>Cadastro de Vendedores</h2>
+   <a href="formListaFuncionario.php">Lista de Vendedores</a>
 <form method="post" action="gravaFuncionario.php">
 <?php
   if ($_GET['id'])  {
     ?>
       <label>ID: </label> <br>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_funcionario'] ?> >
+      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_vendedor'] ?> >
 <?php     
   }
   ?>
   <label>Nome:</label> 
-  <input type="TEXT" name="nome" value=<?php echo $item['nm_funcionario']?> > 
-  <label>Email</label> 
-  <input type="TEXT" name="email" value=<?php echo $item['email']?> > 
-  <label>CPF</label>
-  <input type="TEXT" name="cpf" value=<?php echo $item['cpf']?> > 
-  <label>Telefone</label> 
-  <input type="TEXT" name="telefone" value=<?php echo $item['telefone']?> > 
-  <label>RG</label> 
-  <input type="TEXT" name="rg" value=<?php echo $item['rg']?> > 
-  <label>Data de nascimento</label>
-  <input type="TEXT" name="dt_nasc" value=<?php echo $item['dt_nascimento']?> > 
-  <label>Senha</label> 
-  <input type="TEXT" name="senha" value=<?php echo $item['senha']?> >                                         
+  <input type="TEXT" name="nome" value=<?php echo $item['nm_vendedor']?> >             
   <input type="submit" name="Salvar" value="Salvar">
 </form>

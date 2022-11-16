@@ -1,4 +1,5 @@
 <?php
+   error_reporting(0);
    include '../formMenu.php';
    include '../conexao/conecta.php';
    if ($_GET['id']) {
@@ -26,14 +27,14 @@
   if ($_GET['id'])  {
     ?>
       <label>ID: </label> <br>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_cliente'] ?> /> <br> <br>
+      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_cliente'] ?> > <br> <br>
 <?php     
   }
   ?>
   <label>Nome:</label> <br>
-  <input type="TEXT" name="nome" value=<?php echo $item['nm_cliente']?> /> <br> <br>
+  <input type="TEXT" name="nome" value=<?php echo $item['nm_cliente']?> > <br> <br>
   <label>CPF</label> <br>
-  <input type="TEXT" name="cpf_cliente" value=<?php echo $item['cpf_cliente']?> /> <br> <br>
+  <input type="TEXT" name="cpf_cliente" value=<?php echo $item['cpf_cliente']?> > <br> <br>
  <label>Cidade</label> <br>
 
  <select  name="cidade">

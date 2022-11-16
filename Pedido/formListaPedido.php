@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include '../formMenu.php';
 include '../conexao/conecta.php';
 $sql="SELECT ped.id_pedido, cli.nm_cliente, ven.nm_vendedor FROM tb_pedido ped INNER JOIN tb_cliente cli ON cli.id_cliente=ped.fk_id_cliente INNER JOIN tb_vendedor ven ON ven.id_vendedor=ped.fk_id_vendedor";
@@ -11,11 +12,12 @@ if ($resultado==false) {
 <meta charset="utf-8">
 <h2> Lista de Pedidos</h2>
 <a href="formPedido.php">Novo</a>
-<table border="1">
+<table class="table table-bordered bg-white container text-center">
 	<tr>
 		<th>ID </th>
 		<th>Clientes</th>
 		<th>Vendedor</th>
+		<th colspan="2">Ações</th>
 	</tr>
 	<?php
          while ( $item=mysqli_fetch_array($resultado)) {
