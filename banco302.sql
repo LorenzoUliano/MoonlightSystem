@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Nov-2022 às 04:11
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 16-Nov-2022 às 14:56
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -125,7 +125,10 @@ INSERT INTO `tb_auditoria` (`id_auditoria`, `nm_tabela`, `dt_evento`, `evento`, 
 (82, 'tb_itens_venda', '2022-11-15 23:39:59', 'DELETE', '23|0|41|12|0.00', NULL),
 (83, 'tb_itens_venda', '2022-11-15 23:40:11', 'INSERT', NULL, '25|0|40|1|0.00'),
 (84, 'tb_itens_venda', '2022-11-15 23:40:16', 'DELETE', '24|0|40|1|0.00', NULL),
-(85, 'tb_itens_venda', '2022-11-15 23:40:16', 'DELETE', '25|0|40|1|0.00', NULL);
+(85, 'tb_itens_venda', '2022-11-15 23:40:16', 'DELETE', '25|0|40|1|0.00', NULL),
+(86, 'tb_produto', '2022-11-16 08:37:10', 'DELETE', NULL, NULL),
+(87, 'tb_itens_venda', '2022-11-16 08:37:55', 'INSERT', NULL, '26|0|40|12|0.00'),
+(88, 'tb_itens_venda', '2022-11-16 08:52:37', 'INSERT', NULL, '27|0|40|12|0.00');
 
 -- --------------------------------------------------------
 
@@ -227,6 +230,45 @@ INSERT INTO tb_auditoria (nm_tabela, dt_evento, evento, vl_anterior, vl_novo
 END
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_compra`
+--
+
+CREATE TABLE `tb_compra` (
+  `id_compra` int(11) NOT NULL,
+  `dt_compra` date NOT NULL,
+  `fk_id_fornecedor` int(11) NOT NULL,
+  `fk_id_comprador` int(11) NOT NULL,
+  `vl_total` float(9,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_compra`
+--
+
+INSERT INTO `tb_compra` (`id_compra`, `dt_compra`, `fk_id_fornecedor`, `fk_id_comprador`, `vl_total`) VALUES
+(1, '2022-11-12', 2, 1, 0.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_comprador`
+--
+
+CREATE TABLE `tb_comprador` (
+  `id_comprador` int(11) NOT NULL,
+  `nm_comprador` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_comprador`
+--
+
+INSERT INTO `tb_comprador` (`id_comprador`, `nm_comprador`) VALUES
+(1, 'Lorenzooo');
 
 -- --------------------------------------------------------
 
@@ -353,6 +395,20 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tb_itens_compra`
+--
+
+CREATE TABLE `tb_itens_compra` (
+  `id_itens_compra` int(11) NOT NULL,
+  `fk_id_produto` int(11) NOT NULL,
+  `fk_id_compra` int(11) NOT NULL,
+  `qtd_compra` int(11) NOT NULL,
+  `preuni` float(9,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tb_itens_venda`
 --
 
@@ -384,7 +440,9 @@ INSERT INTO `tb_itens_venda` (`id_itens_venda`, `fk_id_pedido`, `fk_id_produto`,
 (17, 0, 18, 1, 0.00, 2),
 (18, 0, 28, 12, 0.00, 8),
 (19, 0, 40, 5, 0.00, 9),
-(22, 0, 41, 1, 0.00, 11);
+(22, 0, 41, 1, 0.00, 11),
+(26, 0, 40, 12, 0.00, 13),
+(27, 0, 40, 12, 0.00, 13);
 
 --
 -- Acionadores `tb_itens_venda`
@@ -479,8 +537,7 @@ CREATE TABLE `tb_produto` (
 --
 
 INSERT INTO `tb_produto` (`id_produto`, `nm_produto`, `precocompra`, `precovenda`, `obs`, `fk_id_grupo`, `qtd_estoque`) VALUES
-(40, 'Pão', 0.50, 1.50, ' ', 18, NULL),
-(41, 'Cachorro', 50.00, 79.90, ' melhor que picanha', 18, NULL);
+(40, 'Pão', 0.50, 1.50, ' ', 18, NULL);
 
 --
 -- Acionadores `tb_produto`
@@ -529,12 +586,14 @@ CREATE TABLE `tb_venda` (
 --
 
 INSERT INTO `tb_venda` (`id_venda`, `dt_venda`, `fk_id_cliente`, `fk_id_vendedor`, `vl_total`) VALUES
-(1, '2022-11-11', 0, 0, NULL),
-(13, '2022-11-15', 3, 2, 0.00),
+(1, '2022-11-11', 0, 0, 0.00),
+(13, '2022-11-15', 3, 2, 36.00),
 (14, '2022-11-15', 2, 2, 0.00),
 (15, '2022-11-15', 3, 2, 0.00),
 (16, '2022-11-15', 3, 2, 0.00),
-(17, '2022-11-15', 3, 1, 0.00);
+(17, '2022-11-15', 3, 1, 0.00),
+(18, '2022-11-16', 2, 4, 0.00),
+(19, '2022-11-16', 2, 2, 0.00);
 
 -- --------------------------------------------------------
 
@@ -607,6 +666,18 @@ ALTER TABLE `tb_cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
+-- Índices para tabela `tb_compra`
+--
+ALTER TABLE `tb_compra`
+  ADD PRIMARY KEY (`id_compra`);
+
+--
+-- Índices para tabela `tb_comprador`
+--
+ALTER TABLE `tb_comprador`
+  ADD PRIMARY KEY (`id_comprador`);
+
+--
 -- Índices para tabela `tb_fornecedor`
 --
 ALTER TABLE `tb_fornecedor`
@@ -625,6 +696,12 @@ ALTER TABLE `tb_funcionario`
 --
 ALTER TABLE `tb_grupo`
   ADD PRIMARY KEY (`id_grupo`);
+
+--
+-- Índices para tabela `tb_itens_compra`
+--
+ALTER TABLE `tb_itens_compra`
+  ADD PRIMARY KEY (`id_itens_compra`);
 
 --
 -- Índices para tabela `tb_itens_venda`
@@ -664,7 +741,7 @@ ALTER TABLE `tb_vendedor`
 -- AUTO_INCREMENT de tabela `tb_auditoria`
 --
 ALTER TABLE `tb_auditoria`
-  MODIFY `id_auditoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_auditoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cidade`
@@ -677,6 +754,18 @@ ALTER TABLE `tb_cidade`
 --
 ALTER TABLE `tb_cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `tb_compra`
+--
+ALTER TABLE `tb_compra`
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `tb_comprador`
+--
+ALTER TABLE `tb_comprador`
+  MODIFY `id_comprador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tb_fornecedor`
@@ -697,10 +786,16 @@ ALTER TABLE `tb_grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
+-- AUTO_INCREMENT de tabela `tb_itens_compra`
+--
+ALTER TABLE `tb_itens_compra`
+  MODIFY `id_itens_compra` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tb_itens_venda`
 --
 ALTER TABLE `tb_itens_venda`
-  MODIFY `id_itens_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_itens_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `tb_pedido`
@@ -718,7 +813,7 @@ ALTER TABLE `tb_produto`
 -- AUTO_INCREMENT de tabela `tb_venda`
 --
 ALTER TABLE `tb_venda`
-  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `tb_vendedor`

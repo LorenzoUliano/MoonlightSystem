@@ -20,44 +20,46 @@
    $itemGrupo=mysqli_fetch_array($resultadoGrupo);
    ?>
    <meta charset="utf-8">
+   <link rel="stylesheet" href="../layouts/style.css">
+<div class="text-center">
    <h2>Cadastro de Produtos</h2>
-   <a href="formListaProduto.php">Lista de Produtos</a> <br> <br>
-<form method="post" action="GravaProduto.php">
-<?php
-  if ($_GET['id'])  {
-    ?>
-      <label>ID: </label> <br>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_produto'] ?> > <br> <br>
-<?php     
-  }
-  ?>
-  <label>Nome:</label> <br>
-  <input type="TEXT" name="nome" value=<?php echo $item['nm_produto']?> > <br> <br>
-  <label>Preço de Compra</label> <br>
-  <input type="TEXT" name="precocompra" value=<?php echo $item['precocompra']?> > <br><br>
-  <label>Preço de Venda</label> <br>
- <input type="TEXT" name="precovenda" value=<?php echo $item['precovenda']?> > <br><br>
- <label>Grupo</label> <br>
-
- <select  name="grupo">
-  <option>Selecione</option>
-  <?php 
-   while ($itemGrupo=mysqli_fetch_array($resultadoGrupo)) {
-    if ($itemGrupo['id_grupo']==$item['fk_id_grupo']){
-      echo "<option value='$itemGrupo[id_grupo]' selected='selected'>";
-    }else {
-      echo "<option value='$itemGrupo[id_grupo]' >";
+   <a href="formListaProduto.php" class="btn btn-primary">Lista de Produtos</a>
+  <form method="post" action="GravaProduto.php" class="d-flex flex-column w-100 align-items-center pt-3">
+  <?php
+    if ($_GET['id'])  {
+      ?>
+        <label>ID: </label>
+        <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_produto'] ?> > 
+  <?php     
     }
-    echo $itemGrupo['nm_grupo'];
-    echo "</option>";
+    ?>
+    <label>Nome</label> 
+    <input type="TEXT" name="nome" value=<?php echo $item['nm_produto']?> > 
+    <label>Preço de Compra</label> 
+    <input type="TEXT" name="precocompra" value=<?php echo $item['precocompra']?> >
+    <label>Preço de Venda</label>
+  <input type="TEXT" name="precovenda" value=<?php echo $item['precovenda']?> > 
+  <label>Grupo</label>
 
-   }
-   ?>
+  <select  name="grupo">
+    <option>Selecione</option>
+    <?php 
+    while ($itemGrupo=mysqli_fetch_array($resultadoGrupo)) {
+      if ($itemGrupo['id_grupo']==$item['fk_id_grupo']){
+        echo "<option value='$itemGrupo[id_grupo]' selected='selected'>";
+      }else {
+        echo "<option value='$itemGrupo[id_grupo]' >";
+      }
+      echo $itemGrupo['nm_grupo'];
+      echo "</option>";
 
- </select>
- <br> <br>
+    }
+    ?>
 
-  <label>Observação:</label>
-  <TEXTAREA cols=30 rows=05 id="obs" name="obs" ><?php echo $item['obs']?> </TEXTAREA> <br/> <br/>                                                      
-  <input type="submit" name="Salvar" value="Salvar">
-</form>
+  </select>
+    <label>Observação</label>
+    <TEXTAREA cols=30 rows=05 id="obs" name="obs" ><?php echo $item['obs']?> </TEXTAREA>                                                   
+    <input type="submit" name="Salvar" value="Salvar" class="btn btn-success mt-3">
+  </form>
+</div>
+  

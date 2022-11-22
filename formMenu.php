@@ -54,7 +54,13 @@
 				<a href="../Funcionarios/formListaFuncionario.php" class="btn btn-outline-dark fw-bolder">Vendedor</a>
 			</li>
 			<li>
+				<a href="../comprador/formListaComprador.php" class="btn btn-outline-dark fw-bolder">Comprador</a>
+			</li>
+			<li>
 				<a href="../venda/formListaVenda.php" class="btn btn-primary btn-lg fw-bolder">Vendas</a>
+			</li>
+			<li>
+				<a href="../compra/formListaCompra.php" class="btn btn-primary btn-lg fw-bolder">Compras</a>
 			</li>
 		</ul>
 	</div>

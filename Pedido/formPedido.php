@@ -23,6 +23,7 @@
 
    ?>
    <meta charset="utf-8">
+   <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Clientes</h2>
    <a href="formListaCliente.php">Lista de Clientes</a> <br> <br>
 <form method="post" action="gravaPedido.php">

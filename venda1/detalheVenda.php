@@ -35,10 +35,10 @@ if (!$resultadoProdutosVendidos) {
 } 
 
 ?>
-<h2>Detalhes da Venda</h2>
-Código: <?php echo $venda['id_venda'] ?><br />
-Vendedor: <?php echo $venda['nm_vendedor'] ?><br />
-Data: <?php echo $venda['dt_venda'] ?><br /><br />
+<h2 class="pt-4">Detalhes da Venda</h2>
+<p class="fs-5">Código: <?php echo $venda['id_venda'] ?></p><br />
+<p class="fs-5">Vendedor: <?php echo $venda['nm_vendedor'] ?></p><br />
+<p class="fs-5">Data: <?php echo $venda['dt_venda'] ?></p><br /><br />
 
 <form method="post" action="gravaVendaProduto.php">
 	<fieldset>
@@ -62,8 +62,8 @@ Data: <?php echo $venda['dt_venda'] ?><br /><br />
 </form>
 
 <h3>Produtos Vendidos</h3>
-<table border="1">
-	<tr>
+<table class="table table-dark table-striped w-50">
+	<tr class="fs-4">
 		<td>ID</td>
 		<td>Produto</td>
 		<td>Preço</td>
@@ -74,7 +74,7 @@ Data: <?php echo $venda['dt_venda'] ?><br /><br />
 <?php
 	$total = 0;
 	while($linha = mysqli_fetch_array($resultadoProdutosVendidos)) {
-		echo "<tr>";
+		echo "<tr class='fs-4'>";
 		echo "<td>$linha[id_produto]</td>";
 		echo "<td>$linha[nm_produto]</td>";
 		echo "<td>R$ $linha[precovenda]</td>";
@@ -87,7 +87,7 @@ Data: <?php echo $venda['dt_venda'] ?><br /><br />
 
 
 
-		echo "<a href='excluirVendaProduto.php?produto=$linha[id_produto]&venda=$id'>Excluir</a>";
+		echo "<a href='excluirVendaProduto.php?produto=$linha[id_produto]&venda=$id' class='btn btn-danger'>Excluir</a>";
 		echo "</td>";
 		echo "</tr>";
 		$total = $total + ($linha['precovenda'] * $linha['qtd_venda']);
@@ -109,4 +109,4 @@ Data: <?php echo $venda['dt_venda'] ?><br /><br />
 ?>
 
 
-<a href="../venda/formListaVenda.php">Finalizar Venda</a>
+<a href="../venda/formListaVenda.php" class="btn btn-success">Finalizar Venda</a>

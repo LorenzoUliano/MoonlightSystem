@@ -16,6 +16,7 @@
    }
    ?>
    <meta charset="utf-8">
+   <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Fornecedores</h2>
    <a href="formListaFornecedor.php">Lista de Fornecedores</a> <br> <br>
 <form method="post" action="GravaFornecedor.php">

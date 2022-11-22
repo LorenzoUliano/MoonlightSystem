@@ -16,6 +16,7 @@
    }
    ?>
    <meta charset="utf-8">
+   <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Cidades</h2>
    <a href="formListaCidade.php">Lista de Cidades</a>
 <form method="post" action="GravaCidade.php">

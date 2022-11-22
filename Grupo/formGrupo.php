@@ -17,6 +17,7 @@
    }
    ?>
    <meta charset="utf-8">
+   <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Produtos</h2>
    <a href="formListaGrupo.php">Lista de Grupos</a> <br> <br>
 <form method="post" action="GravaGrupo.php">
