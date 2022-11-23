@@ -18,13 +18,13 @@
    <meta charset="utf-8">
    <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Cidades</h2>
-   <a href="formListaCidade.php">Lista de Cidades</a>
-<form method="post" action="GravaCidade.php">
+   <a href="formListaCidade.php" class="btn btn-primary">Lista de Cidades</a>
+<form method="post" action="GravaCidade.php" class="d-flex flex-column w-100 align-items-center pt-3">
 <?php
   if ($_GET['id'])  {
     ?>
       <label>ID: </label>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_cidade'] ?> > 
+      <input type="TEXT" name="id" readonly="readonly" value=<?php echo $item['id_cidade'] ?> > 
 <?php     
   }
   ?>
@@ -32,5 +32,5 @@
   <input type="TEXT" name="nome" value=<?php echo $item['nm_cidade']?> >
   <label>UF:</label>
   <input type="TEXT" name="uf" value=<?php echo $item['uf_cidade']?> >                                              
-  <input type="submit" name="Salvar" value="Salvar">
+  <input type="submit" name="Salvar" value="Salvar" class="btn btn-success mt-3">
 </form>

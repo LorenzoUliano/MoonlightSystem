@@ -26,7 +26,7 @@
    <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Clientes</h2>
    <a href="formListaCliente.php">Lista de Clientes</a> <br> <br>
-<form method="post" action="gravaPedido.php">
+<form method="post" action="gravaPedido.php" class="d-flex flex-column w-100 align-items-center pt-3">
 <?php
   if ($_GET['id'])  {
     ?>

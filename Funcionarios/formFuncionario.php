@@ -18,17 +18,17 @@
    <meta charset="utf-8">
    <link rel="stylesheet" href="../layouts/style.css">
    <h2>Cadastro de Vendedores</h2>
-   <a href="formListaFuncionario.php">Lista de Vendedores</a>
-<form method="post" action="gravaFuncionario.php">
+   <a href="formListaFuncionario.php" class="btn btn-primary">Lista de Vendedores</a>
+<form method="post" action="gravaFuncionario.php" class="d-flex flex-column w-100 align-items-center pt-3">
 <?php
   if ($_GET['id'])  {
     ?>
-      <label>ID: </label> <br>
-      <input type="TEXT " name="id" readonly="readonly" value=<?php echo $item['id_vendedor'] ?> >
+      <label>ID: </label>
+      <input type="TEXT" name="id" readonly="readonly" value=<?php echo $item['id_vendedor'] ?> >
 <?php     
   }
   ?>
   <label>Nome:</label> 
   <input type="TEXT" name="nome" value=<?php echo $item['nm_vendedor']?> >             
-  <input type="submit" name="Salvar" value="Salvar">
+  <input type="submit" name="Salvar" value="Salvar" class="btn btn-success mt-3">
 </form>

@@ -25,19 +25,19 @@ $resultadocomprador = mysqli_query($conexao, $sqlcomprador);
 <meta charset="utf-8">
 <link rel="stylesheet" href="../layouts/style.css">
 <h2>Cadastro de compras</h2>
-<a href="formListaCompra.php">Lista de compras</a> <br> <br>
-<form method="POST" action="gravaCompra.php">
+<a href="formListaCompra.php" class="btn btn-primary">Lista de compras</a>  
+<form method="POST" action="gravaCompra.php" class="d-flex flex-column w-100 align-items-center pt-3">
 
 <?php
 if ($_GET['id'])  {
   ?>
-  <label>ID: </label> <br>
-  <input type="TEXT" name="id" readonly="readonly" value=<?php echo $compra['id_compra'] ?> > <br> <br>
+  <label>ID: </label> 
+  <input type="TEXT" name="id" readonly="readonly" value=<?php echo $compra['id_compra'] ?> >  
 
-  <label>Data de compra:</label> <br>
-  <input type="DATE" name="dt" value=<?php echo $compra['dt_compra']?>   > <br>
+  <label>Data de compra:</label> 
+  <input type="DATE" name="dt" value=<?php echo $compra['dt_compra']?>   > 
 
-  <label>Fornecedor:</label> <br>
+  <label>Fornecedor:</label> 
   <select name="fornecedor">
     <option>Selecione</option>
     <?php
@@ -55,9 +55,9 @@ if ($_GET['id'])  {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Comprador:</label> <br>
+  <label>Comprador:</label> 
   <select name="comprador">
     <option>Selecione</option>
     <?php
@@ -75,20 +75,20 @@ if ($_GET['id'])  {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Valor Total:</label> <br>
-  <input type="TEXT" name="vl" value=<?php echo $compra['vl_total']?>   > <br>
+  <label>Valor Total:</label> 
+  <input type="TEXT" name="vl" value=<?php echo $compra['vl_total']?>   > 
   <?php
 }
 
 else {
   ?>
 
-<label>Data de compra:</label> <br>
-  <input type="DATE" name="dt" > <br>
+<label>Data de compra:</label> 
+  <input type="DATE" name="dt" > 
 
-  <label>Fornecedor:</label> <br>
+  <label>Fornecedor:</label> 
   <select name="fornecedor">
     <option>Selecione</option>
     <?php
@@ -104,9 +104,9 @@ else {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Comprador:</label> <br>
+  <label>Comprador:</label> 
   <select name="comprador">
     <option>Selecione</option>
     <?php
@@ -118,18 +118,18 @@ else {
       else {
         echo "<option value='$itemcomprador[id_comprador]' >";
       }
-      echo $itemcomprador['nm_comprador  ']; 
+      echo $itemcomprador['nm_comprador']; 
       echo "</option>";
       # code...
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Total de Produtos:</label> <br>
-  <input type="TEXT" name="vl" readonly="readonly" > <br>
+  <label>Total de Produtos:</label> 
+  <input type="TEXT" name="vl" readonly="readonly" > 
   <?php
 }
 ?>                                                      
-<input type="submit" name="Salvar" value="Salvar">
+<input type="submit" name="Salvar" value="Salvar" class="btn btn-success mt-3">
 </form>

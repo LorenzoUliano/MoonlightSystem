@@ -1,7 +1,8 @@
+body{
+    text-align: center;
+}
 h2{
-    
     padding-top: 20px;
-
 }
 input[type="text"], textarea{
     border-radius: 5px;

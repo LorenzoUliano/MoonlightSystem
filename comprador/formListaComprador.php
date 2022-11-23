@@ -11,7 +11,7 @@ include '../formMenu.php';
 <meta charset="utf-8">
 <div class="container pt-5">
 	<h2 class="fw-bold"> Lista de compradores</h2>
-	<a href="formComprador.php" class="btn btn-info fw-bold text-white mb-2">ADICIONAR comprador</a>
+	<a href="formComprador.php" class="btn btn-info fw-bold text-white mb-2">ADICIONAR COMPRADOR</a>
 	<table class="table table-striped table-dark container text-center">
 		<tr class="fs-4">
 			<th>ID </th>

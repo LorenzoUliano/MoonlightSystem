@@ -23,21 +23,21 @@ $resultadoVendedor = mysqli_query($conexao, $sqlVendedor);
 ?>
 
 <meta charset="utf-8">
-<link rel="stylesheet" href="../css/edita.css">
+<link rel="stylesheet" href="../layouts/style.css">
 <h2>Cadastro de Vendas</h2>
-<a href="formListaVenda.php">Lista de Vendas</a> <br> <br>
-<form method="POST" action="GravaVenda.php">
+<a href="formListaVenda.php" class="btn btn-primary">Lista de Vendas</a>  
+<form method="POST" action="GravaVenda.php" class="d-flex flex-column w-100 align-items-center pt-3">
 
 <?php
 if ($_GET['id'])  {
   ?>
-  <label>ID: </label> <br>
-  <input type="TEXT" name="id" readonly="readonly" value=<?php echo $venda['id_venda'] ?> > <br> <br>
+  <label>ID: </label> 
+  <input type="TEXT" name="id" readonly="readonly" value=<?php echo $venda['id_venda'] ?> >  
 
-  <label>Data de Venda:</label> <br>
-  <input type="DATE" name="dt" value=<?php echo $venda['dt_venda']?>   > <br>
+  <label>Data de Venda:</label> 
+  <input type="DATE" name="dt" value=<?php echo $venda['dt_venda']?>   > 
 
-  <label>Cliente:</label> <br>
+  <label>Cliente:</label> 
   <select name="cliente">
     <option>Selecione</option>
     <?php
@@ -55,9 +55,9 @@ if ($_GET['id'])  {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Vendedor:</label> <br>
+  <label>Vendedor:</label> 
   <select name="vendedor">
     <option>Selecione</option>
     <?php
@@ -75,20 +75,20 @@ if ($_GET['id'])  {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Valor Total:</label> <br>
-  <input type="TEXT" name="vl" value=<?php echo $venda['vl_total']?>   > <br>
+  <label>Valor Total:</label> 
+  <input type="TEXT" name="vl" value=<?php echo $venda['vl_total']?>   > 
   <?php
 }
 
 else {
   ?>
 
-<label>Data de Venda:</label> <br>
-  <input type="DATE" name="dt" > <br>
+<label>Data de Venda:</label> 
+  <input type="DATE" name="dt" > 
 
-  <label>Cliente:</label> <br>
+  <label>Cliente:</label> 
   <select name="cliente">
     <option>Selecione</option>
     <?php
@@ -106,9 +106,9 @@ else {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Vendedor:</label> <br>
+  <label>Vendedor:</label> 
   <select name="vendedor">
     <option>Selecione</option>
     <?php
@@ -126,12 +126,12 @@ else {
     }
   ?>
   </select>
-  <br><br>
+  
 
-  <label>Total de Produtos:</label> <br>
-  <input type="TEXT" name="vl" readonly="readonly" > <br>
+  <label>Total de Produtos:</label> 
+  <input type="TEXT" name="vl" readonly="readonly" > 
   <?php
 }
 ?>                                                      
-<input type="submit" name="Salvar" value="Salvar">
+<input type="submit" name="Salvar" value="Salvar" class="btn btn-success mt-3">
 </form>
