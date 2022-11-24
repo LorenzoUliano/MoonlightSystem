@@ -1,7 +1,7 @@
 <?php
 include '../conexao/conecta.php';
 $nm_fornecedor=$_POST['nome'];
-$cnpj_fornecedor=$_POST['cnpj'];
+$cnpj_fornecedor=$_POST['cnpj_fornecedor'];
 $fk_id_cidade=$_POST['cidade'];
 
 if ($_POST['id']) {

@@ -1,7 +1,7 @@
 <?php
 include '../formMenu.php';
 include '../conexao/conecta.php';
-$sql="SELECT forn.id_fornecedor, forn.nm_fornecedor, forn.cnpj_fornecedor, cid.nm_cidade FROM tb_fornecedor forn INNER JOIN tb_cidade cid ON cid.id_cidade=forn.fk_id_cidade";
+$sql="SELECT forn.id_fornecedor, forn.nm_fornecedor, forn.cnpj_fornecedor, cid.nm_cidade FROM tb_fornecedor forn INNER JOIN tb_cidade cid ON cid.id_cidade=forn.fk_id_cidade ORDER BY id_fornecedor";
 $resultado= mysqli_query($conexao,$sql);
 if ($resultado==false) {
 	die("Erro: ".mysqli_error($conexao));

@@ -40,15 +40,14 @@
     <label>Preço de Venda</label>
   <input type="TEXT" name="precovenda" value=<?php echo $item['precovenda']?> > 
   <label>Grupo</label>
-
-  <select  name="grupo">
+  <select name="grupo">
     <option>Selecione</option>
     <?php 
     while ($itemGrupo=mysqli_fetch_array($resultadoGrupo)) {
       if ($itemGrupo['id_grupo']==$item['fk_id_grupo']){
-        echo "<option value='$itemGrupo[id_grupo]' selected='selected'>";
+        echo "<option value='".$itemGrupo['id_grupo']."' selected='selected'>";
       }else {
-        echo "<option value='$itemGrupo[id_grupo]' >";
+        echo "<option value='".$itemGrupo['id_grupo']."' >";
       }
       echo $itemGrupo['nm_grupo'];
       echo "</option>";

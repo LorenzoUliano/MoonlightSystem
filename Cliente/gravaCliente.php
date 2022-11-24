@@ -1,8 +1,9 @@
 <?php
 include '../conexao/conecta.php';
 $nm_cliente=$_POST['nome'];
-$cpf_cliente=$_POST['cpf'];
+$cpf_cliente=$_POST['cpf_cliente'];
 $fk_id_cidade=$_POST['cidade'];
+var_dump($_POST);
 
 if ($_POST['id']) {
 	$id=$_POST['id'];

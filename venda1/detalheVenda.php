@@ -12,7 +12,7 @@ $sql = "SELECT v.id_venda, vd.nm_vendedor, cli.nm_cliente,v.dt_venda FROM tb_ven
 $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado) {
-	die("SQL: " . $sql . "<br />" . mysqli_error($conexao));
+	die("SQL: " . $sql . "" . mysqli_error($conexao));
 } else {
 	$venda = mysqli_fetch_array($resultado);
 }
@@ -21,7 +21,7 @@ if (!$resultado) {
 $sqlProdutos = "SELECT id_produto, nm_produto, precovenda FROM tb_produto ORDER BY nm_produto";
 $resultadoProdutos = mysqli_query($conexao, $sqlProdutos);
 if (!$resultadoProdutos) {
-	die("SQL: " . $sql . "<br />" . mysqli_error($conexao));
+	die("SQL: " . $sql . "" . mysqli_error($conexao));
 } 
 
 // LISTA DE PRODUTOS VENDIDOS
@@ -31,38 +31,55 @@ $sqlProdutosVendidos = "SELECT p.id_produto, p.nm_produto, p.precovenda, it.qtd_
 
 $resultadoProdutosVendidos = mysqli_query($conexao, $sqlProdutosVendidos);
 if (!$resultadoProdutosVendidos) {
-	die("SQL: " . $sql . "<br />" . mysqli_error($conexao));
+	die("SQL: " . $sql . "" . mysqli_error($conexao));
 } 
 
 ?>
+<style>
+	body{
+		text-align: center;
+	}
+	input ,select{
+		height: 45px;
+	}
+</style>
 <h2 class="pt-4">Detalhes da Venda</h2>
-<p class="fs-5">Código: <?php echo $venda['id_venda'] ?></p><br />
-<p class="fs-5">Vendedor: <?php echo $venda['nm_vendedor'] ?></p><br />
-<p class="fs-5">Data: <?php echo $venda['dt_venda'] ?></p><br /><br />
+<p class="fs-5">Código: <?php echo $venda['id_venda'] ?></p>
+<p class="fs-5">Vendedor: <?php echo $venda['nm_vendedor'] ?></p>
+<?php
+$novaData = date("d/m/Y", strtotime($venda['dt_venda']));
+?>
+<p class="fs-5">Data: <?php echo $novaData ?></p>
 
 <form method="post" action="gravaVendaProduto.php">
-	<fieldset>
-		<legend>Adicionar Produto</legend>
-		Produto: 
+	<fieldset class="d-flex flex-column w-25 m-auto">
+		<legend class="fs-3">Adicionar Produto</legend>
+		<div class="input-group pb-4">
+		<span class="input-group-text">Produto</span>
 		<input type="hidden" name="venda" value="<?php echo $id ?>">
-		<select name="produto">
-			<option>- selecione - </option>
-	<?php
-		while($linha = mysqli_fetch_array($resultadoProdutos)) {
-			echo "<option value='$linha[id_produto]'>";
-			echo $linha['nm_produto'] . " - (R$ ".$linha['precovenda'].")";
-			echo "</option>";
-		}
-	?>
-		</select> &nbsp;&nbsp;
-		Quantidade:
-		<input type="text" name="quantidade">&nbsp;&nbsp;
-		<input type="submit" value="Adicionar">
+			<select name="produto" class="form-select">
+			<option>Selecione</option>
+			<?php
+				while($linha = mysqli_fetch_array($resultadoProdutos)) {
+					echo "<option value='$linha[id_produto]'>";
+					echo $linha['nm_produto'] . " - (R$ ".$linha['precovenda'].")";
+					echo "</option>";
+				}
+			?>
+		</select> 
+		</div>
+		
+		<div class="input-group pb-4">
+		<span class="input-group-text">Quantidade</span>
+		<input type="text" name="quantidade" class="form-control">&nbsp;&nbsp;
+		</div>
+		
+		<input type="submit" value="Adicionar" class="btn btn-success">
 	</fieldset>
 </form>
 
-<h3>Produtos Vendidos</h3>
-<table class="table table-dark table-striped w-50">
+<h3 class="pt-3">Produtos Vendidos</h3>
+<table class="table table-dark table-striped w-50 m-auto">
 	<tr class="fs-4">
 		<td>ID</td>
 		<td>Produto</td>
@@ -74,19 +91,13 @@ if (!$resultadoProdutosVendidos) {
 <?php
 	$total = 0;
 	while($linha = mysqli_fetch_array($resultadoProdutosVendidos)) {
-		echo "<tr class='fs-4'>";
+		echo "<tr class='fs-5'>";
 		echo "<td>$linha[id_produto]</td>";
 		echo "<td>$linha[nm_produto]</td>";
 		echo "<td>R$ $linha[precovenda]</td>";
 		echo "<td>$linha[qtd_venda]</td>";
 		echo "<td>R$ ". $linha['precovenda'] * $linha['qtd_venda'] ."</td>";
 		echo "<td>";
-
-
-
-
-
-
 		echo "<a href='excluirVendaProduto.php?produto=$linha[id_produto]&venda=$id' class='btn btn-danger'>Excluir</a>";
 		echo "</td>";
 		echo "</tr>";
@@ -94,7 +105,7 @@ if (!$resultadoProdutosVendidos) {
 	}
 ?>
 	<tr>
-		<td colspan="4">TOTAL:
+		<td colspan="4" class="text-lg-start">TOTAL:
 		<td>R$ <?php echo $total ?></td>
 	</tr>
 
@@ -109,4 +120,4 @@ if (!$resultadoProdutosVendidos) {
 ?>
 
 
-<a href="../venda/formListaVenda.php" class="btn btn-success">Finalizar Venda</a>
+<a href="../venda/formListaVenda.php" class="btn btn-success mt-3">Finalizar Venda</a>
